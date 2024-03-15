@@ -14,7 +14,6 @@
     align-items: center;
     justify-content: space-between;
 
-
     & button {
         height: 44px;
         width: 150px;
@@ -48,6 +47,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: black;
+    text-decoration: none;
 
     & img {
         height: 30px;
@@ -56,8 +57,22 @@
 
     }
 
-    /* & svg {
-        font-size: 30px;
-        margin-right: 10px;
-    } */
+
+    & h3 {
+        color: black;
+    }
+
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a {
+        color: black;
+        text-decoration: none;
+        margin: 0 30px;
+    }
+
 }

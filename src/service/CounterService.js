@@ -15,10 +15,24 @@ const getIpAddressUser = async () => {
 
 }
 
+const detectDevice = () => {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    if (screenWidth < 768) {
+        return 'Mobile';
+    } else if (screenWidth >= 768 && screenWidth < 992) {
+        return 'Tablet';
+    } else {
+        return 'Desktop';
+    }
+}
+
 const DetectBrowser = () => {
     try {
         var browserName = navigator.appName;
         var browserVersion = navigator.appVersion;
+        var deviceType = detectDevice();
+
 
         var OSName = "Unknown OS";
         if (navigator.platform.indexOf("Win") != -1) OSName = "Windows";
@@ -27,7 +41,8 @@ const DetectBrowser = () => {
         if (navigator.platform.indexOf("iPhone") != -1) OSName = "iOS";
         if (navigator.platform.indexOf("Android") != -1) OSName = "Android";
 
-        const dataDetectBrowser = { browserName: browserName, browserVersion: browserVersion, OSName: OSName }
+
+        const dataDetectBrowser = { browserName: browserName, browserVersion: browserVersion, OSName: OSName, deviceType: deviceType }
 
         return dataDetectBrowser;
 
@@ -42,6 +57,7 @@ const SendDataUser = async (userData) => {
     try {
         const response = await axios.post(`${process.env.REACT_APP_API}/userdata`, userData);
         console.log("Send data success :)", response.data);
+
     } catch (error) {
         console.error("Error sending data:", error);
     }

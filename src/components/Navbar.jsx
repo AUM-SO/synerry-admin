@@ -1,27 +1,31 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-import "../styles/Navbar.css";
+import "../styles/navbar.css";
 import imageLogo from "../assets/Logo.png";
 
-import { MdOutlineDiscount } from "react-icons/md";
 import { Link } from "react-router-dom";
 import ToggleButton from "@mui/material/ToggleButton";
 
-const Navbar = () => {
+const navbar = () => {
   return (
     <div className="navber">
       <div className="container-navbar">
-        <div className="boxlogo">
+        <Link className="boxlogo" to="/">
           <img src={imageLogo} />
           <h3>Counter Visit.</h3>
-        </div>
-        <Link to="/backoffice">
-          <ToggleButton type="button">Back Office</ToggleButton>
         </Link>
+        <div className="nav-link">
+          <Link to="/profile">
+            <p>Profile</p>
+          </Link>
+          <Link to="/backoffice">
+            <ToggleButton type="button">Back Office</ToggleButton>
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default navbar;

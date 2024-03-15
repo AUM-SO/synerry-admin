@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Layout from "../pages/LayoutPage";
-import NoPage from "../pages/NoPage";
-import BackOffice from "../pages/BackOffice";
+import Layout from "../pages/layoutPage";
+import NoPage from "../pages/noPage";
+import BackOffice from "../pages/backOffice";
+import CounterSetion from "../components/counterSetion";
+import ProfileDev from "../pages/profileDev";
 
 const routers = createBrowserRouter([
   {
@@ -11,11 +13,15 @@ const routers = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Layout />,
+    element: <Layout compon={<CounterSetion />} />,
+  },
+  {
+    path: "/profile",
+    element: <Layout compon={<ProfileDev />} />,
   },
   {
     path: "/backoffice",
-    element: <BackOffice />,
+    element: <Layout compon={<BackOffice />} />,
   },
 ]);
 

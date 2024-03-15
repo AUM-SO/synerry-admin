@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BackOffice = () => {
+const backOffice = () => {
   return (
     <div>BackOffice</div>
   )
 }
 
-export default BackOffice
+export default backOffice;

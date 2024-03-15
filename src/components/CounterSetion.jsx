@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "../styles/CounterSetion.css";
+import "../styles/counterSetion.css";
 
 import Button from "@mui/material/Button";
 
@@ -13,8 +13,7 @@ import {
   getIpAddressUser,
   DetectBrowser,
   SendDataUser,
-} from "../service/CounterService";
-import axios from "axios";
+} from "../service/counterService";
 
 const CounterSetion = () => {
   const [ipAddress, setIpAddress] = useState("");
@@ -42,13 +41,12 @@ const CounterSetion = () => {
         browserName: dataBrowser.browserName,
         browserVersion: dataBrowser.browserVersion,
         OSName: dataBrowser.OSName,
+        deviceType: dataBrowser.deviceType,
+        onWeb: "CounterVisitPage",
       };
       SendDataUser(userData);
     }
   }, [ipAddress, dataBrowser]);
-
-  console.log("ipAddress ==>", ipAddress);
-  console.log("dataBrowser ==>", dataBrowser);
 
   return (
     <div className="container-counter">

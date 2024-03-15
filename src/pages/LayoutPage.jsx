@@ -1,14 +1,13 @@
 import React from "react";
-import "../styles/LayoutPage.css";
+import "../styles/layoutPage.css";
 
-import Navbar from "../components/Navbar";
-import CounterSetion from "../components/CounterSetion";
+import Navbar from "../components/navbar";
 
-const LayoutPage = () => {
+const LayoutPage = ({ compon }) => {
   return (
     <div className="container-layoutPage">
       <Navbar />
-      <CounterSetion />
+      <main>{compon}</main>
     </div>
   );
 };
