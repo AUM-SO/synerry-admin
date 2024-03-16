@@ -27,12 +27,33 @@ const detectDevice = () => {
     }
 }
 
+
+const detectBrowser = () => {
+    var userAgent = navigator.userAgent;
+
+    if (userAgent.indexOf("Opera") !== -1 || userAgent.indexOf('OPR') !== -1) {
+        return 'Opera';
+    } else if (userAgent.indexOf("Edg") !== -1) {
+        return 'Edge';
+    } else if (userAgent.indexOf("Chrome") !== -1) {
+        return 'Google Chrome';
+    } else if (userAgent.indexOf("Safari") !== -1) {
+        return 'Safari';
+    } else if (userAgent.indexOf("Firefox") !== -1) {
+        return 'Mozilla Firefox';
+    } else if (userAgent.indexOf("MSIE") !== -1 || (!!document.documentMode === true)) {
+        return 'IE';
+    } else {
+        return 'Unknown';
+    }
+}
+
+
 const DetectBrowser = () => {
     try {
-        var browserName = navigator.appName;
         var browserVersion = navigator.appVersion;
         var deviceType = detectDevice();
-
+        var browserName = detectBrowser();
 
         var OSName = "Unknown OS";
         if (navigator.platform.indexOf("Win") != -1) OSName = "Windows";
@@ -43,6 +64,7 @@ const DetectBrowser = () => {
 
 
         const dataDetectBrowser = { browserName: browserName, browserVersion: browserVersion, OSName: OSName, deviceType: deviceType }
+        console.log('dataDetectBrowser ===>', dataDetectBrowser);
 
         return dataDetectBrowser;
 
@@ -56,10 +78,10 @@ const DetectBrowser = () => {
 const SendDataUser = async (userData) => {
     try {
         const response = await axios.post(`${process.env.REACT_APP_API}/userdata`, userData);
-        console.log("Send data success :)", response.data);
+        console.log("Send data success", response.data);
 
     } catch (error) {
-        console.error("Error sending data:", error);
+        console.error("Error sending data", error);
     }
 }
 

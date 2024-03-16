@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from "react";
+import Dashboard from "../components/dashboard";
+
+import "../styles/backOffice.css";
 
 const backOffice = () => {
   return (
-    <div>BackOffice</div>
-  )
-}
+    <div className="backOffice-page">
+      <div className="backOffice-container">
+        <Dashboard />
+      </div>
+    </div>
+  );
+};
 
 export default backOffice;

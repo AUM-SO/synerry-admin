@@ -1,0 +1,54 @@
+.backOffice-page {
+    height: max-content;
+    width: 100%;
+
+
+}
+
+.backOffice-container {
+    height: 100vh;
+    width: 90%;
+    margin: 3% auto;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+
+}
+
+.section-nav-backoffice {
+    height: 400px;
+    width: 18%;
+    max-width: 30%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: 0.5 solid #737373e2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    padding: 20px;
+
+    & button {
+        height: 55px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        background-color: none;
+        padding: 0 20px;
+        margin: 10px 0;
+
+        & p {
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        & svg {
+            margin-right: 5px;
+            font-size: 20px;
+
+        }
+    }
+
+}
+
+
+ 

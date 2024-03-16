@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/layoutPage.css";
 
 import Navbar from "../components/navbar";
+import "../styles/layoutPage.css";
 
 const LayoutPage = ({ compon }) => {
   return (
